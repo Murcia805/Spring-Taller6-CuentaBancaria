@@ -1,8 +1,20 @@
 plugins {
 	id 'java'
+	id 'jacoco'
 	id 'org.springframework.boot' version '3.4.2'
 	id 'io.spring.dependency-management' version '1.1.7'
 	id "org.sonarqube" version "6.0.1.5171"
+}
+
+jacocoTestReport {
+    reports {
+        xml.required = true
+        html.enabled = true
+    }
+}
+
+test {
+    finalizedBy jacocoTestReport // ensure report is generated after tests run
 }
 
 sonar {
@@ -10,6 +22,7 @@ sonar {
     property "sonar.projectKey", "jdarguello_Spring-Taller6-CuentaBancaria"
     property "sonar.organization", "jdarguello"
     property "sonar.host.url", "https://sonarcloud.io"
+	property "sonar.coverage.jacoco.xmlReportPaths", "build/reports/jacoco/test/jacocoTestReport.xml"
   }
 }
 
