@@ -1,0 +1,34 @@
+server:
+    port: 8081
+
+spring:
+    profiles:
+        active: funcional
+
+---
+
+spring:
+    config:
+        activate:
+            on-profile: test_unitarios
+    datasource:
+        url: jdbc:h2:mem:test-db
+        username: user
+        password: pass
+    jpa:
+        hibernate:
+            ddl-auto: create-drop
+
+---
+
+spring:
+    config:
+        activate:
+            on-profile: funcional
+    datasource:
+        url: jdbc:postgres://localhost:5430/cuentabancaria
+        username: admin
+        password: ejemplo123
+    jpa:
+        hibernate:
+            ddl-auto: update
