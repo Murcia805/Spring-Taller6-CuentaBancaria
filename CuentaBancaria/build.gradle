@@ -8,10 +8,11 @@ plugins {
 
 jacocoTestReport {
     reports {
-        xml.required = true
-        html.enabled = true
+        xml.required.set(true)
+        html.required.set(true)
     }
 }
+
 
 test {
     finalizedBy jacocoTestReport // ensure report is generated after tests run
