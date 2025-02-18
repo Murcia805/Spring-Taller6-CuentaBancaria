@@ -28,9 +28,13 @@ public class CuentaBancariaOperacionesTest extends ServiciosTest {
 
     @Test
     void nuevaCuentaValida() throws Exception {
+        cuentaAhorrosLeonardo.setSaldo(0.0);
+        cuentaLeonardoBD.setSaldo(0.0);
         CuentaBancaria cuentaNuevaLeonardo = operaciones.nuevaCuenta(cuentaAhorrosLeonardo, Leonardo.getClienteId());
         this.validacionesCuenta(cuentaLeonardoBD, cuentaNuevaLeonardo);
 
+        cuentaCorrienteFlorinda.setSaldo(0.0);
+        cuentaFlorindaBD.setSaldo(0.0);
         CuentaBancaria cuentaNuevaFlorinda = operaciones.nuevaCuenta(cuentaCorrienteFlorinda, Florinda.getClienteId());
         this.validacionesCuenta(cuentaFlorindaBD, cuentaNuevaFlorinda);
     }
