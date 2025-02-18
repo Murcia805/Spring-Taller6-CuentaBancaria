@@ -28,7 +28,7 @@ public class TransaccionesService implements TransaccionOperaciones{
 
     @Override
     public Transaccion nuevaTransaccion(Transaccion transaccion) throws Exception {
-        this.validacionesTransaccion(transaccion);
+        this.transaccionValida(transaccion);
         return this.guardarTransaccion(transaccion);
     }
 
@@ -46,7 +46,17 @@ public class TransaccionesService implements TransaccionOperaciones{
         return null;    //No se encontró la transacción
     }
 
-    private void validacionesTransaccion(Transaccion transaccion) throws Exception {
+    private Transaccion guardarTransaccion(Transaccion transaccion) {
+        if(transaccion.getClass() == TransaccionEfectivo.class) {
+            return this.transaccionEfectivoRepository.save((TransaccionEfectivo) transaccion);
+        } else if (transaccion.getClass() == Movimiento.class) {
+            return this.movimientoRepository.save((Movimiento) transaccion);
+        }
+        return null;
+    }
+
+    @Override
+    public void transaccionValida(Transaccion transaccion) throws Exception {
         //Validación de saldo
         if (transaccion.getMonto() == null) {
             throw new Exception("El monto debe ser un número");
@@ -63,15 +73,6 @@ public class TransaccionesService implements TransaccionOperaciones{
         } else if(Duration.between(fecha, LocalDateTime.now()).toMinutes() < 0) {
             throw new TimeoutException("Alerta de fraude: la fecha de la transacción fue alterada");
         }
-    }
-
-    private Transaccion guardarTransaccion(Transaccion transaccion) {
-        if(transaccion.getClass() == TransaccionEfectivo.class) {
-            return this.transaccionEfectivoRepository.save((TransaccionEfectivo) transaccion);
-        } else if (transaccion.getClass() == Movimiento.class) {
-            return this.movimientoRepository.save((Movimiento) transaccion);
-        }
-        return null;
     }
     
 }

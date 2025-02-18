@@ -26,27 +26,31 @@ public abstract class GeneralTest {
     protected Transaccion movimientoBancario;
 
     @BeforeEach
-    public void setUp() {
+    public void setUp() throws Exception{
         //Clientes
         Leonardo = Cliente.builder()
+            .clienteId(1L)
             .nombre("Leonardo Mesa")
             .build();
         
         Florinda = Cliente.builder()
+            .clienteId(2L)
             .nombre("Florinda Pinzon")
             .build();
         
         //Cuentas bancarias
         cuentaAhorrosLeonardo = CuentaBancaria.builder()
             .cliente(Leonardo)
-            .clienteId(1L)
+            .clienteId(Leonardo.getClienteId())
+            .numeroCuenta("53627273")
             .fechaCreacion(LocalDate.now())
             .saldo(100_000.0)
             .build();
         
         cuentaCorrienteFlorinda = CuentaBancaria.builder()
             .cliente(Florinda)
-            .clienteId(2L)
+            .clienteId(Florinda.getClienteId())
+            .numeroCuenta("4843827238")
             .fechaCreacion(LocalDate.now())
             .saldo(250_000.0)
             .build();

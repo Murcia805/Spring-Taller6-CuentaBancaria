@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 import org.junit.jupiter.api.Test;
 
@@ -21,7 +22,7 @@ import com.BancoC.CuentaBancaria.modelos.contratos.Transaccion;
 public class CuentaBancariaTest extends ModelosTest{
 
     @Test
-    public void crearYObtenerUnaCuenta() {
+    void crearYObtenerUnaCuenta() {
         this.validacionesCuenta(
             cuentaCorrienteFlorinda,
             cuentaBancariaRepository.findById(cuentaCorrienteFlorinda.getCuentaId()).get()
@@ -34,7 +35,7 @@ public class CuentaBancariaTest extends ModelosTest{
     }
 
     @Test
-    public void obtenerTodasCuentasUnCliente() {
+    void obtenerTodasCuentasUnCliente() {
         CuentaBancaria cuentaCorrienteLeonardo = this.cuentaBancariaRepository.save(CuentaBancaria.builder()
             .cliente(Leonardo)
             .clienteId(1L)
@@ -58,14 +59,14 @@ public class CuentaBancariaTest extends ModelosTest{
     }
 
     @Test
-    public void eliminarCuenta() {
+    void eliminarCuenta() {
         this.cuentaBancariaRepository.deleteById(cuentaAhorrosLeonardo.getCuentaId());
 
         assertTrue(cuentaBancariaRepository.findById(cuentaAhorrosLeonardo.getCuentaId()).isEmpty());
     }
 
     @Test
-    public void obtenerTodasTransacciones() {
+    void obtenerTodasTransacciones() {
         //Transacciones de Leonardo
         List<Transaccion> transacciones = cuentaBancariaRepository
             .findAllTransaccionesCuenta(cuentaAhorrosLeonardo.getCuentaId());
@@ -84,6 +85,15 @@ public class CuentaBancariaTest extends ModelosTest{
         assertTrue(transacciones.contains(retiro));
         assertTrue(transacciones.contains(movimientoBancario));
 
+    }
+
+    @Test
+    void obtenerCuentaPorNumeroCuenta() {
+        Optional<CuentaBancaria> cuentaObtenida = cuentaBancariaRepository.findByNumeroCuenta(
+                cuentaAhorrosLeonardo.getNumeroCuenta());
+            
+        assertFalse(cuentaObtenida.isEmpty());
+        this.validacionesCuenta(cuentaAhorrosLeonardo, cuentaObtenida.get());
     }
 
     private void validacionesCuenta(CuentaBancaria cuentaReferencia, CuentaBancaria cuentaPrueba) {

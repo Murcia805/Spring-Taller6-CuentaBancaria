@@ -6,9 +6,10 @@ import com.BancoC.CuentaBancaria.modelos.CuentaBancaria;
 import com.BancoC.CuentaBancaria.modelos.contratos.Transaccion;
 
 public interface CuentaBancariaOperaciones {
-    CuentaBancaria nuevaCuenta (CuentaBancaria cuentaBancaria, Long clienteId);
-    CuentaBancaria transaccion(Long clienteId, Transaccion transaccion); 
+    CuentaBancaria nuevaCuenta (CuentaBancaria cuentaBancaria, Long clienteId) throws Exception;
+    CuentaBancaria transaccion(Transaccion transaccion) throws Exception; 
     CuentaBancaria obtenerCuenta (Long cuentaId);
+    CuentaBancaria obtenerCuenta(String numeroCuenta);
     List<CuentaBancaria> obtenerCuentas (Long clienteId);
-    Boolean eliminarCuenta(Long clienteId, Long cuentaId);
+    Boolean eliminarCuenta(Long clienteId, String numeroCuenta) throws Exception;
 }

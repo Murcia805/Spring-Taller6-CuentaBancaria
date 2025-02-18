@@ -30,7 +30,7 @@ public class TransaccionOperacionesTest extends ServiciosTest{
 
     @Override
     @BeforeEach
-    public void setUp() {
+    public void setUp() throws Exception {
         super.setUp();  //Trae configuraciones de pruebas y mocks de repositorios
 
         this.operaciones = new TransaccionesService(

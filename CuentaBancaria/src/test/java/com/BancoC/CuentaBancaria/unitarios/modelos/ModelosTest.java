@@ -26,7 +26,7 @@ public abstract class ModelosTest extends GeneralTest {
 
     @Override
     @BeforeEach
-    public void setUp() { 
+    public void setUp() throws Exception { 
         super.setUp();  //Definición de los objetos de pruebas
 
         //Almacenamiento de los objetos de pruebas en la base de datos

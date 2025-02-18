@@ -1,6 +1,7 @@
 package com.BancoC.CuentaBancaria.repositorios;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -11,6 +12,8 @@ import com.BancoC.CuentaBancaria.modelos.contratos.Transaccion;
 
 public interface CuentaBancariaRepository extends JpaRepository<CuentaBancaria, Long> {
     List<CuentaBancaria> findByClienteId(Long clienteId);
+
+    Optional<CuentaBancaria> findByNumeroCuenta(String numeroCuenta);
 
 
     @Query(
