@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
-import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -20,7 +19,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 @WebMvcTest
 @ActiveProfiles("test_unitarios")
-@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
 public class ControladoresTest extends GeneralTest {
     
     @Autowired
@@ -66,9 +64,6 @@ public class ControladoresTest extends GeneralTest {
                 .saldo(150_000.0)
                 .build()
             );
-        
-        when(cuentaBancariaOperaciones.transaccion(movimientoBancario))
-            .thenThrow(new RuntimeException("Falla general"));
     }
 
     private void guardarCuentas() throws Exception {
@@ -81,12 +76,6 @@ public class ControladoresTest extends GeneralTest {
             cuentaCorrienteFlorinda,
             Florinda.getClienteId()
         )).thenReturn(cuentaCorrienteFlorinda);
-
-        when(cuentaBancariaOperaciones.nuevaCuenta(
-            cuentaFraudulenta,
-            cuentaFraudulenta.getClienteId()
-        )).thenThrow(new RuntimeException("Alerta de fraude: una cuenta nueva no puede tener un saldo diferente a 0.0"));
-
     }
 
     private void obtenerCuenta() {

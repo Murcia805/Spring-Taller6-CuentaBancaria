@@ -11,6 +11,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -117,6 +118,11 @@ public class CuentaControladorTest extends ControladoresTest {
     void nuevaCuentaFraudeSaldo() throws Exception {
         String requestBody = mapper.writeValueAsString(cuentaFraudulenta);
 
+        when(cuentaBancariaOperaciones.nuevaCuenta(
+            cuentaFraudulenta,
+            cuentaFraudulenta.getClienteId()
+        )).thenThrow(new RuntimeException("Alerta de fraude: una cuenta nueva no puede tener un saldo diferente a 0.0"));
+
         mockMvc.perform(
             post("/api/cuenta")
             .param("clienteId", "" + cuentaFraudulenta.getClienteId())
@@ -152,6 +158,9 @@ public class CuentaControladorTest extends ControladoresTest {
     @Test
     void nuevaTransaccion400() throws Exception {
         String requestBody = mapper.writeValueAsString(movimientoBancario);
+
+        when(cuentaBancariaOperaciones.transaccion(movimientoBancario))
+            .thenThrow(new RuntimeException("Falla general"));
 
         mockMvc.perform(
             post("/api/cuenta/transaccion")
