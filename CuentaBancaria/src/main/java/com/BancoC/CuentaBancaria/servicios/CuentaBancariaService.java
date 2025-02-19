@@ -3,6 +3,8 @@ package com.BancoC.CuentaBancaria.servicios;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.stereotype.Service;
+
 import com.BancoC.CuentaBancaria.modelos.CuentaBancaria;
 import com.BancoC.CuentaBancaria.modelos.Movimiento;
 import com.BancoC.CuentaBancaria.modelos.TransaccionEfectivo;
@@ -11,6 +13,7 @@ import com.BancoC.CuentaBancaria.repositorios.CuentaBancariaRepository;
 import com.BancoC.CuentaBancaria.servicios.contratos.CuentaBancariaOperaciones;
 import com.BancoC.CuentaBancaria.servicios.contratos.TransaccionOperaciones;
 
+@Service
 public class CuentaBancariaService implements CuentaBancariaOperaciones {
 
     private CuentaBancariaRepository repository;
