@@ -134,7 +134,7 @@ public class CuentaBancariaService implements CuentaBancariaOperaciones {
         if (cuenta.getClienteId() != clienteId) {
             throw new Exception("Alerta de fraude: se intenta vincular una cuenta a un cliente diferente");
         }
-        if (cuenta.getSaldo() != 0.0) {
+        if (cuenta.getSaldo() != null && cuenta.getSaldo() != 0.0) {
             throw new Exception("Alerta de fraude: una cuenta nueva no puede tener un saldo diferente a 0.0");
         }
     }

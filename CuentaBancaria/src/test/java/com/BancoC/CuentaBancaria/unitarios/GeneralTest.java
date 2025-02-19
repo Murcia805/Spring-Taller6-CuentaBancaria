@@ -20,6 +20,7 @@ public abstract class GeneralTest {
 
     protected CuentaBancaria cuentaAhorrosLeonardo;
     protected CuentaBancaria cuentaCorrienteFlorinda;
+    protected CuentaBancaria cuentaFraudulenta;
 
     protected Transaccion consignacion;
     protected Transaccion retiro;
@@ -55,6 +56,13 @@ public abstract class GeneralTest {
             .saldo(250_000.0)
             .build();
         
+        cuentaFraudulenta = CuentaBancaria.builder()
+            .clienteId(500L)
+            .numeroCuenta("1022222222")
+            .fechaCreacion(LocalDate.now())
+            .saldo(250_000_000.0)
+            .build();  
+
         //Transacciones
         consignacion = TransaccionEfectivo.builder()
             .monto(50_000.0)

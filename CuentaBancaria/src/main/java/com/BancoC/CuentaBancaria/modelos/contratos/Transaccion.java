@@ -3,6 +3,10 @@ package com.BancoC.CuentaBancaria.modelos.contratos;
 import java.time.LocalDateTime;
 
 import com.BancoC.CuentaBancaria.modelos.CuentaBancaria;
+import com.BancoC.CuentaBancaria.modelos.Movimiento;
+import com.BancoC.CuentaBancaria.modelos.TransaccionEfectivo;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 import jakarta.persistence.DiscriminatorColumn;
 import jakarta.persistence.DiscriminatorType;
@@ -26,6 +30,15 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,          
+    include = JsonTypeInfo.As.PROPERTY,    
+    property = "tipo"                     
+)
+@JsonSubTypes({
+    @JsonSubTypes.Type(value = TransaccionEfectivo.class, name = "efectivo"),
+    @JsonSubTypes.Type(value = Movimiento.class, name = "movimiento")
+})
 public abstract class Transaccion {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
