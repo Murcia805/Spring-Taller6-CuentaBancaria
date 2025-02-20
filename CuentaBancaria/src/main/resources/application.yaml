@@ -1,4 +1,5 @@
 server:
+    address: 0.0.0.0
     port: 8080
 
 spring:
@@ -27,7 +28,7 @@ spring:
         activate:
             on-profile: funcional
     datasource:
-        url: jdbc:postgres://localhost:5430/cuentabancaria
+        url: jdbc:postgresql://localhost:5430/cuentabancaria
         username: admin
         password: ejemplo123
         driver-class-name: org.postgresql.Driver
@@ -42,7 +43,7 @@ spring:
         activate:
             on-profile: cloud
     datasource:
-        url: jdbc:postgres://${DB_HOST:localhost}:${DB_PORT:5430}/${DB_NAME:cuentabancaria}
+        url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5430}/${DB_NAME:cuentabancaria}
         username: ${DB_USER:admin}
         password: ${DB_password:ejemplo123}
         driver-class-name: org.postgresql.Driver
