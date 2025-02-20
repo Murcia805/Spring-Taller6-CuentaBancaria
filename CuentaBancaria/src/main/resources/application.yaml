@@ -1,5 +1,5 @@
 server:
-    port: 8081
+    port: 8080
 
 spring:
     profiles:
@@ -29,6 +29,20 @@ spring:
         url: jdbc:postgres://localhost:5430/cuentabancaria
         username: admin
         password: ejemplo123
+    jpa:
+        hibernate:
+            ddl-auto: update
+
+---
+
+spring:
+    config:
+        activate:
+            on-profile: cloud
+    datasource:
+        url: jdbc:postgres://${DB_HOST:localhost}:${DB_PORT:5430}/${DB_NAME:cuentabancaria}
+        username: ${DB_USER:admin}
+        password: ${DB_password:ejemplo123}
     jpa:
         hibernate:
             ddl-auto: update
