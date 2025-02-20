@@ -16,7 +16,7 @@ RUN gradle clean bootJar --no-daemon --refresh-dependencies --no-parallel --debu
 
 
 # Etapa 2: crear un runtime con OpenJDK
-FROM openjdk:17-jdk-slim
+FROM openjdk:21-jdk-slim
 WORKDIR /app
 # Copiar el jar de la Etapa 1
 COPY --from=builder /app/build/libs/*.jar app.jar
