@@ -1,0 +1,20 @@
+name: CI Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    uses: jdarguello/Spring-Taller6-CuentaBancaria/.github/workflows/build.yaml@main
+    secrets:
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+  
+  artifact:
+    needs:
+    - build
+    uses: jdarguello/Spring-Taller6-CuentaBancaria/.github/workflows/artifact.yaml@main
+    secrets:
+      DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
+      DOCKER_HUB_TOKEN: ${{ secrets.DOCKER_HUB_TOKEN }}
