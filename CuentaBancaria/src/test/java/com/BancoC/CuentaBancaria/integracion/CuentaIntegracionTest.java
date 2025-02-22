@@ -82,7 +82,6 @@ public class CuentaIntegracionTest extends IntegracionTest {
 
         assertNotNull(cuentasObtenidas);
         assertEquals(1, cuentasObtenidas.size());
-        System.out.println(cuentasObtenidas);
         this.validarCuenta(cuentaCorrienteFlorinda, cuentasObtenidas.get(0));
     }
 

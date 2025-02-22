@@ -70,7 +70,6 @@ public class CuentaControlador {
     public ResponseEntity<CuentaBancaria> nuevaTransaccion(@RequestBody Transaccion transaccion) throws Exception {
         CuentaBancaria cuentaObtenida = null;
         try {
-            System.out.println("ENTRA");
             cuentaObtenida = operaciones.transaccion(transaccion);
         } catch (Exception exception) {
             return ResponseEntity.badRequest().build();
