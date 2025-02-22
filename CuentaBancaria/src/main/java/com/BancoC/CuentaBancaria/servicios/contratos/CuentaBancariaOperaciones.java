@@ -7,7 +7,7 @@ import com.BancoC.CuentaBancaria.modelos.contratos.Transaccion;
 
 public interface CuentaBancariaOperaciones {
     CuentaBancaria nuevaCuenta (CuentaBancaria cuentaBancaria, Long clienteId) throws Exception;
-    CuentaBancaria transaccion(Transaccion transaccion) throws Exception; 
+    Transaccion transaccion(Transaccion transaccion) throws Exception; 
     CuentaBancaria obtenerCuenta (Long cuentaId);
     CuentaBancaria obtenerCuenta(String numeroCuenta);
     List<CuentaBancaria> obtenerCuentas (Long clienteId);

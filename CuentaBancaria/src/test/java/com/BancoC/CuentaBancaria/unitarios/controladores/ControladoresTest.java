@@ -14,6 +14,7 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 
 import com.BancoC.CuentaBancaria.GeneralTest;
+import com.BancoC.CuentaBancaria.modelos.TransaccionEfectivo;
 import com.BancoC.CuentaBancaria.servicios.contratos.CuentaBancariaOperaciones;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -60,9 +61,13 @@ public class ControladoresTest extends GeneralTest {
     private void transacciones() throws Exception {
         when(cuentaBancariaOperaciones.transaccion(consignacion))
             .thenReturn(
-                cuentaAhorrosLeonardo.builder()
-                .saldo(150_000.0)
-                .build()
+                TransaccionEfectivo.builder()
+                    .transaccionId(101L)
+                    .cuentaDestino(consignacion.getCuentaDestino())
+                    .fechaCreacion(consignacion.getFechaCreacion())
+                    .monto(consignacion.getMonto())
+                    .tipoTransaccion("C")
+                    .build()
             );
     }
 

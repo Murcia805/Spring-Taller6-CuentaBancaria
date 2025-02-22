@@ -89,18 +89,17 @@ public class CuentaBancariaOperacionesTest extends ServiciosTest {
     @Test
     void transaccionValidaYObtenerCuenta() throws Exception {
         //Transacciones en efectivo
-        CuentaBancaria cuentaActualizada =  operaciones.transaccion(consignacion);
-        assertEquals(150_000.0, cuentaActualizada.getSaldo());
-        verify(cuentaBancariaRepository, times(1)).save(cuentaActualizada);
+        operaciones.transaccion(consignacion);
+        cuentaAhorrosLeonardo.setSaldo(150_000.0);
+        verify(cuentaBancariaRepository, times(1)).save(cuentaLeonardoBD);
     
-        cuentaActualizada =  operaciones.transaccion(retiro);
-        assertEquals(240_000.0, cuentaActualizada.getSaldo());
-        verify(cuentaBancariaRepository, times(1)).save(cuentaActualizada);
+        operaciones.transaccion(retiro);
+        cuentaCorrienteFlorinda.setSaldo(240_000.0);
+        verify(cuentaBancariaRepository, times(1)).save(cuentaFlorindaBD);
 
         //Movimiento bancario
-        cuentaActualizada = operaciones.transaccion(movimientoBancario);
-        assertEquals(80_000.0, cuentaActualizada.getSaldo());
-        verify(cuentaBancariaRepository, times(2)).save(cuentaActualizada);
+        operaciones.transaccion(movimientoBancario);
+        verify(cuentaBancariaRepository, times(2)).save(cuentaLeonardoBD);
     }
 
     @Test

@@ -6,6 +6,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MvcResult;
 
 import com.BancoC.CuentaBancaria.modelos.CuentaBancaria;
+import com.BancoC.CuentaBancaria.modelos.contratos.Transaccion;
 import com.fasterxml.jackson.core.type.TypeReference;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -145,14 +146,14 @@ public class CuentaControladorTest extends ControladoresTest {
         .andExpect(status().isCreated())
         .andReturn();
 
-        CuentaBancaria cuentaObtenida = mapper.readValue(
+        Transaccion transaccionRealizada = mapper.readValue(
             response.getResponse().getContentAsString(),
-            CuentaBancaria.class
+            Transaccion.class 
         );
 
         verify(cuentaBancariaOperaciones, times(1)).transaccion(consignacion);
-        assertNotNull(cuentaObtenida);
-        assertEquals(150_000.0, cuentaObtenida.getSaldo());
+        assertNotNull(transaccionRealizada);
+        assertEquals(consignacion.getMonto(), transaccionRealizada.getMonto());
     }
 
     @Test

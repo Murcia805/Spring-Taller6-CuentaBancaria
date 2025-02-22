@@ -67,13 +67,13 @@ public class CuentaControlador {
     }
 
     @PostMapping("transaccion")
-    public ResponseEntity<CuentaBancaria> nuevaTransaccion(@RequestBody Transaccion transaccion) throws Exception {
-        CuentaBancaria cuentaObtenida = null;
+    public ResponseEntity<Transaccion> nuevaTransaccion(@RequestBody Transaccion transaccion) throws Exception {
+        Transaccion transaccionRealizada = null;
         try {
-            cuentaObtenida = operaciones.transaccion(transaccion);
+            transaccionRealizada = operaciones.transaccion(transaccion);
         } catch (Exception exception) {
             return ResponseEntity.badRequest().build();
         }
-        return ResponseEntity.status(HttpStatus.CREATED).body(cuentaObtenida);
+        return ResponseEntity.status(HttpStatus.CREATED).body(transaccionRealizada);
     }
 }

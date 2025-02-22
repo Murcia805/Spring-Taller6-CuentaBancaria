@@ -32,7 +32,7 @@ public class CuentaBancariaService implements CuentaBancariaOperaciones {
     }
 
     @Override
-    public CuentaBancaria transaccion(Transaccion transaccion) throws Exception {
+    public Transaccion transaccion(Transaccion transaccion) throws Exception { 
         CuentaBancaria cuentaCliente = null;
         //Operaciones transaccionales
         if (transaccion.getClass() == TransaccionEfectivo.class) {
@@ -42,8 +42,7 @@ public class CuentaBancariaService implements CuentaBancariaOperaciones {
         }
 
         //Validación y guardado de la transacción
-        transaccionesService.nuevaTransaccion(transaccion);
-        return cuentaCliente;
+        return transaccionesService.nuevaTransaccion(transaccion);
     }
 
     private void validacionSaldoInsuficiente(Double nuevoSaldo) throws Exception {
