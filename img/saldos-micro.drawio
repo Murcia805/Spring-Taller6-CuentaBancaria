@@ -1,0 +1,139 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36" version="26.0.14">
+  <diagram id="XnwHTPVDIBA9Wmv74DvP" name="CuentaBancaria">
+    <mxGraphModel dx="2052" dy="2433" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="LE9D9_dvOpwzLwSi8wmK-1" value="Modelos" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;verticalAlign=top;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="10" y="-110" width="770" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="QrbDDLHOybWTe-8-9PaZ-1" value="CuentaBancaria" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="314" y="180" width="200" height="144" as="geometry" />
+        </mxCell>
+        <mxCell id="QrbDDLHOybWTe-8-9PaZ-2" value="- cuentaId: Long&lt;div&gt;- numeroCuenta: String&lt;/div&gt;&lt;div&gt;- fechaCreacion: LocalDate&lt;/div&gt;&lt;div&gt;- saldo: Double&lt;/div&gt;&lt;div&gt;- transacciones: List&amp;lt;Transaccion&amp;gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="QrbDDLHOybWTe-8-9PaZ-1" vertex="1">
+          <mxGeometry y="26" width="200" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="QrbDDLHOybWTe-8-9PaZ-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="QrbDDLHOybWTe-8-9PaZ-1" vertex="1">
+          <mxGeometry y="110" width="200" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="QrbDDLHOybWTe-8-9PaZ-4" value="+ getters/setters" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="QrbDDLHOybWTe-8-9PaZ-1" vertex="1">
+          <mxGeometry y="118" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="TlY6ijvcw-Y4IYhiXwOv-6" value="" style="group" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="30" y="140" width="240" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="TlY6ijvcw-Y4IYhiXwOv-5" value="ext" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;verticalAlign=top;" parent="TlY6ijvcw-Y4IYhiXwOv-6" vertex="1">
+          <mxGeometry y="10" width="240" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="LE9D9_dvOpwzLwSi8wmK-2" value="Cliente" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="TlY6ijvcw-Y4IYhiXwOv-6" vertex="1">
+          <mxGeometry x="25" y="45" width="190" height="134" as="geometry" />
+        </mxCell>
+        <mxCell id="LE9D9_dvOpwzLwSi8wmK-3" value="- clienteId: Long&lt;div&gt;- nombre: String&lt;/div&gt;&lt;div&gt;- cuentas: List&amp;lt;CuentaBancaria&amp;gt;&lt;/div&gt;&lt;div&gt;- fechaVinculacion: LocalDate&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="LE9D9_dvOpwzLwSi8wmK-2" vertex="1">
+          <mxGeometry y="26" width="190" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="LE9D9_dvOpwzLwSi8wmK-4" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="LE9D9_dvOpwzLwSi8wmK-2" vertex="1">
+          <mxGeometry y="100" width="190" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="LE9D9_dvOpwzLwSi8wmK-5" value="+ getters/setters" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="LE9D9_dvOpwzLwSi8wmK-2" vertex="1">
+          <mxGeometry y="108" width="190" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="TlY6ijvcw-Y4IYhiXwOv-13" value="" style="group" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="304" y="-80" width="230" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="TlY6ijvcw-Y4IYhiXwOv-7" value="contratos" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;verticalAlign=top;" parent="TlY6ijvcw-Y4IYhiXwOv-13" vertex="1">
+          <mxGeometry x="-10" y="10" width="240" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="TlY6ijvcw-Y4IYhiXwOv-12" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;abstract class&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;Transaccion&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;# transaccionId: Long&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;# monto: Double&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;# fechaCreacion: LocalDate&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;# cuentaDestino: CuentaBancaria&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ getters/setters&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="TlY6ijvcw-Y4IYhiXwOv-13" vertex="1">
+          <mxGeometry x="15" y="40" width="190" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="TlY6ijvcw-Y4IYhiXwOv-14" value="TransaccionEfectivo" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="99" y="-9" width="160" height="86" as="geometry" />
+        </mxCell>
+        <mxCell id="TlY6ijvcw-Y4IYhiXwOv-15" value="- tipoTransaccion: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="TlY6ijvcw-Y4IYhiXwOv-14" vertex="1">
+          <mxGeometry y="26" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="TlY6ijvcw-Y4IYhiXwOv-16" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="TlY6ijvcw-Y4IYhiXwOv-14" vertex="1">
+          <mxGeometry y="52" width="160" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="TlY6ijvcw-Y4IYhiXwOv-17" value="+ getters/setters" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="TlY6ijvcw-Y4IYhiXwOv-14" vertex="1">
+          <mxGeometry y="60" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="TlY6ijvcw-Y4IYhiXwOv-18" value="Movimiento" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="570" y="-9" width="190" height="86" as="geometry" />
+        </mxCell>
+        <mxCell id="TlY6ijvcw-Y4IYhiXwOv-19" value="- cuentaOrigen: CuentaBancaria" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="TlY6ijvcw-Y4IYhiXwOv-18" vertex="1">
+          <mxGeometry y="26" width="190" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="TlY6ijvcw-Y4IYhiXwOv-20" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="TlY6ijvcw-Y4IYhiXwOv-18" vertex="1">
+          <mxGeometry y="52" width="190" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="TlY6ijvcw-Y4IYhiXwOv-21" value="+ method(type): type" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="TlY6ijvcw-Y4IYhiXwOv-18" vertex="1">
+          <mxGeometry y="60" width="190" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="9ympy7Vj5MYxIRuZaczL-1" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="QrbDDLHOybWTe-8-9PaZ-2" target="LE9D9_dvOpwzLwSi8wmK-3" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="300" y="150" as="sourcePoint" />
+            <mxPoint x="460" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9ympy7Vj5MYxIRuZaczL-2" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="TlY6ijvcw-Y4IYhiXwOv-12" target="QrbDDLHOybWTe-8-9PaZ-1" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="300" y="150" as="sourcePoint" />
+            <mxPoint x="460" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9ympy7Vj5MYxIRuZaczL-5" value="" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="TlY6ijvcw-Y4IYhiXwOv-15" target="TlY6ijvcw-Y4IYhiXwOv-12" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="300" y="150" as="sourcePoint" />
+            <mxPoint x="460" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9ympy7Vj5MYxIRuZaczL-6" value="" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="TlY6ijvcw-Y4IYhiXwOv-19" target="TlY6ijvcw-Y4IYhiXwOv-12" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="300" y="150" as="sourcePoint" />
+            <mxPoint x="460" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9ympy7Vj5MYxIRuZaczL-10" value="" style="group" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="827" y="-90" width="490" height="450" as="geometry" />
+        </mxCell>
+        <mxCell id="LE9D9_dvOpwzLwSi8wmK-17" value="Servicios" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;verticalAlign=top;fontSize=16;" parent="9ympy7Vj5MYxIRuZaczL-10" vertex="1">
+          <mxGeometry width="490" height="450" as="geometry" />
+        </mxCell>
+        <mxCell id="9ympy7Vj5MYxIRuZaczL-9" value="" style="group" parent="9ympy7Vj5MYxIRuZaczL-10" vertex="1" connectable="0">
+          <mxGeometry x="40" y="60" width="407.5" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="66eKhCe3xUYjhzK1BUf4-1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;CuentaBancariaOperaciones&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- repository: CuentaBancariaRepository&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- operaciones: TransaccionOperaciones&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ nuevaCuentaBancaria (cuenta): CuentaBancaria&lt;br&gt;+ transaccion (clienteId: Long, transaccion: Transaccion): CuentaBancaria&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ obtenerCuenta(cuentaId: Long): CuentaBancaria&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ obtenerCuentas(clienteId: Long): List&amp;lt;CuentaBancaria&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ eliminarCuenta (cuentaId: Long): Boolean&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="9ympy7Vj5MYxIRuZaczL-9" vertex="1">
+          <mxGeometry width="407.5" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="9ympy7Vj5MYxIRuZaczL-7" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;TransaccionOperaciones&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- movimientoRepo: MovimientoRepository&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- transaccionEfectivoRepo: TransaccionEfectivoRepository&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ nuevaTransaccion(transaccion): Transaccion&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ obtenerTransaccion(transaccionId: Long): Transaccion&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="9ympy7Vj5MYxIRuZaczL-9" vertex="1">
+          <mxGeometry x="43.75" y="230" width="320" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="9ympy7Vj5MYxIRuZaczL-8" value="" style="endArrow=block;startArrow=block;endFill=1;startFill=1;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="9ympy7Vj5MYxIRuZaczL-9" source="66eKhCe3xUYjhzK1BUf4-1" target="9ympy7Vj5MYxIRuZaczL-7" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="218.75" y="200" as="sourcePoint" />
+            <mxPoint x="378.75" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3rthO8rY5JneeiY6slwF-5" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="600" y="410" width="470" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="6PeHLcTEgQ-kYGAc-o61-3" value="Controladores" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;fontSize=16;verticalAlign=top;" parent="3rthO8rY5JneeiY6slwF-5" vertex="1">
+          <mxGeometry width="470" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="3rthO8rY5JneeiY6slwF-1" value="CuentaControlador" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="3rthO8rY5JneeiY6slwF-5">
+          <mxGeometry x="30" y="50" width="410" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="3rthO8rY5JneeiY6slwF-2" value="- operaciones: CuentaBancariaOperaciones" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="3rthO8rY5JneeiY6slwF-1">
+          <mxGeometry y="26" width="410" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="3rthO8rY5JneeiY6slwF-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="3rthO8rY5JneeiY6slwF-1">
+          <mxGeometry y="52" width="410" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="3rthO8rY5JneeiY6slwF-4" value="&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;+ nuevaCuentaBancaria (cuenta): CuentaBancaria&lt;br&gt;+ transaccion (clienteId: Long, transaccion: Transaccion): CuentaBancaria&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;+ obtenerCuenta(cuentaId: Long): CuentaBancaria&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;+ obtenerCuentas(clienteId: Long): List&amp;lt;CuentaBancaria&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;+ eliminarCuenta (cuentaId: Long): Boolean&lt;/p&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="3rthO8rY5JneeiY6slwF-1">
+          <mxGeometry y="60" width="410" height="100" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
