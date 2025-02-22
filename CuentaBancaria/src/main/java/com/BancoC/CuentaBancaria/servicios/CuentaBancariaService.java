@@ -60,9 +60,9 @@ public class CuentaBancariaService implements CuentaBancariaOperaciones {
 
         //Actualizar saldo
         Double saldo = cuentaCliente.getSaldo();
-        if (transaccion.getTipoTransaccion() == "C") {
+        if (transaccion.getTipoTransaccion().equalsIgnoreCase("C")) {
             saldo += transaccion.getMonto();
-        } else if (transaccion.getTipoTransaccion() == "R") {
+        } else if (transaccion.getTipoTransaccion().equalsIgnoreCase("R")) {
             saldo -= transaccion.getMonto();
             this.validacionSaldoInsuficiente(saldo);
         }
@@ -140,5 +140,6 @@ public class CuentaBancariaService implements CuentaBancariaOperaciones {
         if (cuenta.getSaldo() != null && cuenta.getSaldo() != 0.0) {
             throw new Exception("Alerta de fraude: una cuenta nueva no puede tener un saldo diferente a 0.0");
         }
+        cuenta.setSaldo(0.0);
     }
 }

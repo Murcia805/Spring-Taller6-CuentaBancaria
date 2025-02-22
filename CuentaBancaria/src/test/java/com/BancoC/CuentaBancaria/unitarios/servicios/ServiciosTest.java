@@ -10,6 +10,7 @@ import java.util.Optional;
 import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.BeanUtils;
 
+import com.BancoC.CuentaBancaria.GeneralTest;
 import com.BancoC.CuentaBancaria.modelos.CuentaBancaria;
 import com.BancoC.CuentaBancaria.modelos.Movimiento;
 import com.BancoC.CuentaBancaria.modelos.TransaccionEfectivo;
@@ -18,7 +19,6 @@ import com.BancoC.CuentaBancaria.repositorios.CuentaBancariaRepository;
 import com.BancoC.CuentaBancaria.repositorios.MovimientoRepository;
 import com.BancoC.CuentaBancaria.repositorios.TransaccionEfectivoRepository;
 import com.BancoC.CuentaBancaria.servicios.contratos.TransaccionOperaciones;
-import com.BancoC.CuentaBancaria.unitarios.GeneralTest;
 
 public class ServiciosTest extends GeneralTest {
 

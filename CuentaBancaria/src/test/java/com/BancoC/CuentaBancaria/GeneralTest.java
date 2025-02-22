@@ -1,4 +1,4 @@
-package com.BancoC.CuentaBancaria.unitarios;
+package com.BancoC.CuentaBancaria;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -81,7 +81,7 @@ public abstract class GeneralTest {
         movimientoBancario = Movimiento.builder()
             .cuentaOrigen(cuentaAhorrosLeonardo)
             .cuentaDestino(cuentaCorrienteFlorinda)
-            .monto(50_000.0)
+            .monto(70_000.0)
             .fechaCreacion(LocalDateTime.now())
             .build();
         

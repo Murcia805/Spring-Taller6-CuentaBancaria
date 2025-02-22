@@ -13,8 +13,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 
+import com.BancoC.CuentaBancaria.GeneralTest;
 import com.BancoC.CuentaBancaria.servicios.contratos.CuentaBancariaOperaciones;
-import com.BancoC.CuentaBancaria.unitarios.GeneralTest;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @WebMvcTest

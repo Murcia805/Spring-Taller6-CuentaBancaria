@@ -5,12 +5,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.ActiveProfiles;
 
+import com.BancoC.CuentaBancaria.GeneralTest;
 import com.BancoC.CuentaBancaria.modelos.Movimiento;
 import com.BancoC.CuentaBancaria.modelos.TransaccionEfectivo;
 import com.BancoC.CuentaBancaria.repositorios.CuentaBancariaRepository;
 import com.BancoC.CuentaBancaria.repositorios.MovimientoRepository;
 import com.BancoC.CuentaBancaria.repositorios.TransaccionEfectivoRepository;
-import com.BancoC.CuentaBancaria.unitarios.GeneralTest;
 
 @DataJpaTest
 @ActiveProfiles("test_unitarios")

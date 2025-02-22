@@ -99,7 +99,7 @@ public class CuentaBancariaOperacionesTest extends ServiciosTest {
 
         //Movimiento bancario
         cuentaActualizada = operaciones.transaccion(movimientoBancario);
-        assertEquals(100_000.0, cuentaActualizada.getSaldo());
+        assertEquals(80_000.0, cuentaActualizada.getSaldo());
         verify(cuentaBancariaRepository, times(2)).save(cuentaActualizada);
     }
 

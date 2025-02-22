@@ -25,7 +25,7 @@ public class MovimientoTest extends ModelosTest {
         assertNotNull(movimiento);
         assertEquals(Movimiento.class, movimiento.getClass());
         assertEquals(movimientoBancario.getTransaccionId(), movimiento.getTransaccionId());
-        assertEquals(50_000.0, movimiento.getMonto());
+        assertEquals(70_000.0, movimiento.getMonto());
         assertEquals(cuentaAhorrosLeonardo, ((Movimiento) movimiento).getCuentaOrigen());
         assertEquals(cuentaCorrienteFlorinda, movimiento.getCuentaDestino());
     }

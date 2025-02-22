@@ -47,6 +47,9 @@ public class CuentaControlador {
     @GetMapping("todas")
     public ResponseEntity<List<CuentaBancaria>> obtenerCuentas(@RequestParam("clienteId") Long clienteId) {
         List<CuentaBancaria> cuentasCliente = operaciones.obtenerCuentas(clienteId);
+        if (cuentasCliente == null || cuentasCliente.size() == 0) {
+            return ResponseEntity.notFound().build();
+        }
         return ResponseEntity.ok().body(cuentasCliente);
     }
 
@@ -67,6 +70,7 @@ public class CuentaControlador {
     public ResponseEntity<CuentaBancaria> nuevaTransaccion(@RequestBody Transaccion transaccion) throws Exception {
         CuentaBancaria cuentaObtenida = null;
         try {
+            System.out.println("ENTRA");
             cuentaObtenida = operaciones.transaccion(transaccion);
         } catch (Exception exception) {
             return ResponseEntity.badRequest().build();
