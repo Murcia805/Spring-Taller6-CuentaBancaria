@@ -18,6 +18,7 @@ RUN gradle clean bootJar --no-daemon --refresh-dependencies --no-parallel --debu
 # Etapa 2: crear un runtime con OpenJDK
 FROM openjdk:21-jdk-slim
 WORKDIR /app
+RUN apt-get update && apt-get install -y netcat-openbsd && apt-get clean
 # Copiar el jar de la Etapa 1
 COPY --from=builder /app/build/libs/*.jar app.jar
 # Exponer puerto 8080 para comunicación con el micro
